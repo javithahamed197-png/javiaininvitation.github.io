@@ -294,3 +294,127 @@ width:100%;
 max-width:280px;
 }
 }
+
+/* PREMIUM COUNTDOWN */
+
+.countdown-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+max-width:700px;
+margin:30px auto 0;
+}
+
+.time-box{
+background:rgba(255,255,255,.04);
+border:1px solid rgba(201,162,74,.25);
+border-radius:20px;
+padding:25px;
+backdrop-filter:blur(12px);
+transition:.3s ease;
+}
+
+.time-box:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 30px rgba(201,162,74,.15);
+}
+
+.time-box span{
+display:block;
+font-size:2.4rem;
+font-weight:700;
+color:var(--gold);
+}
+
+.time-box label{
+font-size:14px;
+letter-spacing:2px;
+opacity:.8;
+}
+
+/* HEART ANIMATION */
+
+.heart-wrapper{
+margin:20px 0;
+}
+
+.heart{
+font-size:34px;
+color:var(--gold-soft);
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.2);}
+100%{transform:scale(1);}
+}
+
+/* FALLING LEAVES */
+
+.leaf{
+position:fixed;
+top:-50px;
+width:20px;
+height:20px;
+pointer-events:none;
+z-index:1;
+
+background:
+linear-gradient(
+135deg,
+#d9b66a,
+#8c6a28
+);
+
+border-radius:
+0 100% 0 100%;
+
+animation:leafFall linear forwards;
+}
+
+@keyframes leafFall{
+
+0%{
+transform:
+translateY(-50px)
+translateX(0)
+rotate(0deg);
+}
+
+100%{
+transform:
+translateY(110vh)
+translateX(150px)
+rotate(720deg);
+}
+}
+
+/* PREMIUM SECTION TITLES */
+
+.countdown-section h2,
+#details h2,
+.parents h2{
+margin-bottom:30px;
+font-size:2rem;
+text-shadow:
+0 0 15px rgba(201,162,74,.25);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.countdown-grid{
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+}
+
+.time-box{
+padding:18px;
+}
+
+.time-box span{
+font-size:1.8rem;
+}
+}
